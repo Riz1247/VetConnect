@@ -1,0 +1,269 @@
+.shelter-booking-container {
+  padding: 2rem;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.booking-form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out;
+}
+
+.booking-title {
+  text-align: center;
+  color: #2196f3;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.paw-icon {
+  animation: bounce 1s ease infinite;
+}
+
+.shelter-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.shelter-info img {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.shelter-info h3 {
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.shelter-location {
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.booking-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 500;
+}
+
+.pet-image-upload {
+  margin: 1rem 0;
+}
+
+.image-upload-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #2196f3;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-upload-container:hover {
+  border-color: #1976d2;
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+.upload-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #666;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  animation: bounce 1s ease infinite;
+}
+
+.image-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.remove-image:hover {
+  background: white;
+  color: #f44336;
+  transform: scale(1.1);
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  outline: none;
+}
+
+.days-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #2196f3;
+}
+
+.charge-display {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2196f3;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.charge-display span {
+  font-size: 1.5rem;
+  color: #1976d2;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.submit-button .paw-print {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .paw-print {
+  transform: translateX(5px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shelter-booking-container {
+    padding: 1rem;
+  }
+
+  .booking-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .booking-title {
+    font-size: 2rem;
+  }
+
+  .submit-button {
+    padding: 0.875rem 1.5rem;
+  }
+}

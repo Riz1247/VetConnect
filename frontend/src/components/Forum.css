@@ -1,0 +1,251 @@
+.forum-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: white;
+}
+
+.forum-title {
+  text-align: center;
+  color: #2196f3;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.5s ease-out;
+}
+
+.home-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 0.8rem 1.5rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.home-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: #1976d2;
+}
+
+.review-form-container {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.review-form-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rating-input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.star.empty {
+  color: #e0e0e0;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.review-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-input textarea {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  min-height: 120px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  resize: vertical;
+}
+
+.review-input textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+}
+
+.submit-button {
+  padding: 1rem;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+.reviews-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reviews-container h2 {
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.user-type {
+  background: #e3f2fd;
+  color: #2196f3;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.rating {
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.review-date {
+  color: #999;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #2196f3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #ffe6e6;
+  border-radius: 8px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

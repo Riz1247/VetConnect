@@ -1,0 +1,297 @@
+.emergency-vet-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3f91b8, #7bc5e7);
+  padding: 2rem;
+}
+
+.emergency-content {
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.emergency-content:hover {
+  transform: translateY(-5px);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.paw-icon-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paw-icon {
+  font-size: 3rem;
+  animation: pawFloat 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(219, 51, 17, 0.3));
+}
+
+@keyframes pawFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-10deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(10deg);
+  }
+}
+
+.emergency-title {
+  text-align: center;
+  color: #db3311;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-title.pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.emergency-hotline {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.emergency-hotline h2 {
+  color: #2f3542;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.emergency-hotline h2:hover {
+  transform: scale(1.05);
+}
+
+.hotline-button {
+  background: #4763ff;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 15px rgba(71, 99, 255, 0.3);
+}
+
+.hotline-button:hover {
+  background: #5d77ff;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(71, 99, 255, 0.4);
+}
+
+.phone-icon {
+  font-size: 2.5rem;
+  animation: shake 2s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.emergency-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.info-card:hover::before {
+  transform: translateX(100%);
+}
+
+.info-card h3 {
+  color: #2f3542;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.info-card:hover h3 {
+  color: #4763ff;
+}
+
+.info-card p, .info-card li {
+  color: #57606f;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover p, .info-card:hover li {
+  transform: translateX(5px);
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-card li:before {
+  content: "•";
+  color: #4763ff;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover li:before {
+  transform: scale(1.5);
+}
+
+.emergency-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  background: #2f3542;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.action-button:hover {
+  background: #57606f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .emergency-content {
+    padding: 2rem;
+  }
+
+  .title-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .paw-icon {
+    font-size: 2.5rem;
+  }
+
+  .emergency-title {
+    font-size: 2rem;
+  }
+
+  .hotline-button {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .phone-icon {
+    font-size: 2rem;
+  }
+
+  .emergency-info {
+    grid-template-columns: 1fr;
+  }
+} 

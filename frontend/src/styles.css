@@ -1,0 +1,572 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --accent-color: #E74C3C;
+    --background-color: #F5F6FA;
+    --text-color: #2C3E50;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-brand i {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Button Styles */
+button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-signup {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-logout {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background-color: #c0392b;
+  }
+  
+  .btn-dashboard {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .btn-dashboard:hover,
+  .btn-dashboard:focus {
+    color: var(--primary-color);
+    outline: none;
+  }
+  
+
+.btn-login:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-signup:hover {
+    background-color: #357ABD;
+}
+
+/* Hero Section with Enhanced Animations */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: slideInDown 1s ease-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.hero h1:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    animation: fadeInUp 1s ease 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transform: translateY(20px);
+}
+
+.search-box input {
+    padding: 1rem 1.5rem;
+    width: 60%;
+    border: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.search-box button {
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-box button:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.search-box button i {
+    transition: transform 0.3s ease;
+}
+
+.search-box button:hover i {
+    transform: scale(1.2);
+}
+
+/* Enhanced Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Floating Animation for Hero Content */
+.hero-content {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Shimmer Effect for Hero Title */
+.hero h1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .search-box input {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-box input,
+    .search-box button {
+        width: 90%;
+        border-radius: var(--border-radius);
+        margin: 5px 0;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px); /* Smooth background blur */
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+  }
+
+
+/* Blurred modal overlay */
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+/* Glass-style login/register box */
+.modal-content {
+    background: rgba(255, 255, 255, 0.12); /* Transparent frosted glass */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 2.5rem;
+    width: 420px;
+    max-width: 90%;
+    position: relative;
+    animation: popUp 0.4s ease;
+    color: white;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Modal title */
+.modal-content h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+  }
+
+/* Input fields */
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+}
+
+.modal-content input::placeholder {
+    color: rgba(255, 255, 255, 0.9); /* More visible */
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* Submit button */
+.modal-content button {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 0.5rem;
+  background-color: #E74C3C;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #c0392b;
+}
+
+
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.auth-options {
+    margin-top: 1rem;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+.divider {
+    text-align: center;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.auth-switch a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.user-type {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
